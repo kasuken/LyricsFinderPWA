@@ -1,0 +1,19 @@
+﻿@model LyricsFinder.Web.Models.LyricModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<form asp-action="Search" method="post">
+    <div class="form-group">
+        <label for="SongTitle">Title</label>
+        <input type="text" class="form-control" id="SongTitle" name="SongTitle" aria-describedby="emailHelp" placeholder="Song Title" value="@Model.Title">
+    </div>
+    <div class="form-group">
+        <label for="BandName">Band</label>
+        <input type="text" class="form-control" id="BandName" name="BandName" placeholder="Band name" value="@Model.BandName">
+    </div>
+    <button type="submit" class="btn btn-primary">Search</button>
+</form>
+
+@Html.Raw(@Model.Lyric)
